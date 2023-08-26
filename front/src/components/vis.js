@@ -23,6 +23,7 @@ import {
 import style from './GeometryViewer.module.css';
 
 
+
 let autoInit = true;
 let background = [0, 0, 0];
 let fullScreenRenderWindow;
@@ -300,7 +301,7 @@ function Vis({ predictionFileURL }) {
       // ColorBy handling
       // --------------------------------------------------------------------
 
-      const colorByOptions = [{ value: ':', label: 'Solid color' }].concat(
+      const colorByOptions = [{ value: ':', label: '(c) Label' }].concat(
         source
           .getPointData()
           .getArrays()

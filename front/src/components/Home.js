@@ -133,6 +133,7 @@ class Home extends Component {
             <button onClick={this.toggleVis}>Afficher l'objet VTP prédit</button>
           </div>
         ) : null}
+        
         {showVisComponent && <Vis predictionFileURL={predictionFileURL} />}
       </div>
     );
