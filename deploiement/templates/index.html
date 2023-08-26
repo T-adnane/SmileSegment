@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js'; // Use appropriate loader
+
+        // Set up Three.js scene
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Load your JSON data and create Three.js geometry and materials
+
+        // Create mesh and add it to the scene
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        // Set camera position
+        camera.position.z = 5;
+
+        // Add camera controls
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // Render loop
+        const animate = () => {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        };
+        animate();
+    </script>
+
+</head>
+
+<body>
+    <div class="login">
+        <h1>Mesh Segmentation Prediction</h1>
+
+        <!-- Formulaire pour télécharger un fichier .obj -->
+        <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data">
+            <input type="file" name="meshFile" accept=".obj">
+            <button type="submit" formaction="{{ url_for('predict') }}">Upload and Predict</button>
+        </form>
+
+        <!-- Section pour afficher la prédiction -->
+        <div>
+            <h3>Prediction:</h3>
+            {{ prediction_text }}
+        </div>
+    </div>
+</body>
+</html>
