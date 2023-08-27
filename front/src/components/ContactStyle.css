@@ -1,0 +1,65 @@
+/* ContactStyle.css */
+
+.contact {
+  background-color: #ffffff;
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: 28px;
+  color: #306190;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(241, 241, 241, 0.3); /* Ajoute l'ombre au texte */
+}
+h4 {
+  font-size: 10px;
+  color: #f0f0f0;
+    text-shadow: 2px 2px 4px rgba(241, 241, 241, 0.3);
+}
+
+
+form {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 6px rgba(214, 216, 240, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: #cccccc;
+  font-size: 16px;
+}
+
+
+
+button[type="submit"] {
+  background-color: #1f2f43;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #303131;
+}
+
+button[type="submit"] span {
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+button[type="submit"]:disabled span {
+  opacity: 0;
+}
+
