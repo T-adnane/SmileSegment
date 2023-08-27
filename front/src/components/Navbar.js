@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./NavbarStyles.css";
+import Vis1 from "./vis1";
 
 class Navbar extends Component {
   state = {
@@ -28,10 +29,10 @@ class Navbar extends Component {
               className={this.state.clicked ? "#navbar active" : "#navbar"}
             >
               <li>
-                <a href="/">Ségmentation</a>
+                <a href="Home">Ségmentation</a>
               </li>
               <li>
-                <a href="vis">Visualisation</a>
+                <a href="vis1">Visualisation</a>
               </li>
             <li>
                 <a href="ContactUs">Contact us</a>

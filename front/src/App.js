@@ -1,10 +1,11 @@
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
 import { BrowserRouter , Routes, Route } from "react-router-dom";
 import "./styles.css";
-import Vis from "./components/vis";
+import Vis1 from "./components/vis1";
 import ContactUs  from "./components/ContactUs";
 import Footer from "./components/Footer"
+import Home from "./components/Home";
+import { Banner } from "./components/Banner";
 
 export default function App() {
   return (
@@ -12,8 +13,9 @@ export default function App() {
       <Navbar/>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/vis" element={<Vis/>}/>
+          <Route path="/" element={<Banner/>}/>
+          <Route path="/Home" element={<Home/>}/>
+          <Route path="/vis1" element={<Vis1/>}/>
           <Route path="/ContactUs" element={<ContactUs/>}/>
         </Routes>
       </BrowserRouter>
