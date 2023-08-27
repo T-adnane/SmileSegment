@@ -33,7 +33,10 @@ class Navbar extends Component {
               <li>
                 <a href="vis">Visualisation</a>
               </li>
-            </ul>
+            <li>
+                <a href="ContactUs">Contact us</a>
+              </li>
+              </ul>
           </div>
           <div id="mobile" onClick={this.handleClick}>
             <i
