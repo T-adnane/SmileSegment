@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import { BrowserRouter , Routes, Route } from "react-router-dom";
 import "./styles.css";
 import Vis from "./components/vis";
+import ContactUs  from "./components/ContactUs";
 import Footer from "./components/Footer"
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/vis" element={<Vis/>}/>
+          <Route path="/ContactUs" element={<ContactUs/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>
