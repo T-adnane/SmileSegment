@@ -7,10 +7,18 @@ import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import Vis from './components/vis';
+import { BrowserRouter , Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="vis" element={<Vis />}/>
+        </Routes>
+      </BrowserRouter>
       <NavBar />
       <Banner />
       <Skills />
