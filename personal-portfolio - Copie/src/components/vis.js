@@ -302,13 +302,7 @@ function Vis({ predictionFileURL }) {
       // --------------------------------------------------------------------
 
       const colorByOptions = [{ value: ':', label: '(c) Label' }].concat(
-        source
-          .getPointData()
-          .getArrays()
-          .map((a) => ({
-            label: `(p) ${a.getName()}`,
-            value: `PointData:${a.getName()}`,
-          })),
+        
         source
           .getCellData()
           .getArrays()
@@ -539,20 +533,11 @@ function Vis({ predictionFileURL }) {
       }
 
       load(myContainer, { fileURL: predictionFileURL });
-      const testMessage = document.createElement('div');
-      testMessage.textContent = "This is a test message.";
-      testMessage.style.fontSize = '18px';
-      testMessage.style.color = 'white';
-      testMessage.style.position = 'absolute';
-      testMessage.style.top = '20px';
-      testMessage.style.left = '20px';
-      myContainer.appendChild(testMessage);
     }
 
     
 
-  }, []);
-  
+  }, []); 
 }
 
 export default Vis;

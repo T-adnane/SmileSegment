@@ -10,7 +10,6 @@ export const Newsletter = () => {
   const [predictionCompleted, setPredictionCompleted] = useState(false);
   const [predictionMessage, setPredictionMessage] = useState("");
   const [predictionFileURL, setPredictionFileURL] = useState("");
-  const [showVisComponent, setShowVisComponent] = useState(false);
   const [showVis, setShowVis] = useState(false);
 
   const handleFileChange = (event) => {
@@ -52,17 +51,13 @@ export const Newsletter = () => {
     }
   };
 
-  const toggleVis = () => {
-    setShowVisComponent((prevState) => !prevState);
+  const handleShowVis = () => {
+    setShowVis(true); // Mettre à jour l'état pour afficher <Vis>
   };
 
-  useEffect(() => {
-    if (showVis) {
-      toggleVis(); // Close the Vis component when showVis state changes
-    }
-  }, [showVis]);
 
   return (
+    <>
     <Col lg={12}>
       <div className="newsletter-bx wow slideInUp new-email-bx">
         <input
@@ -99,12 +94,14 @@ export const Newsletter = () => {
         {predictionCompleted && predictionSuccess && predictionFileURL ? (
           <div>
             <button onClick={handleDownload}>Télécharger le fichier VTP</button>
-            <a href="vis"><button onClick={() => setShowVis(true)}>Afficher l'objet VTP prédit</button></a>
+            <button onClick={handleShowVis}>Afficher l'objet VTP prédit</button>
           </div>
         ) : null}
         {showVis && <Vis predictionFileURL={predictionFileURL} />}
       </div>
     </Col>
+    
+    </>
   );
 }
 
