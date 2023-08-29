@@ -25,13 +25,12 @@
 }
 
 .fullScreen {
-  position: absolute !important;
+  position: relative !important;
   width: 100vw !important;
   height: 100vh !important;
   top: 0 !important;
   left: 0 !important;
   background: black !important;
-  z-index: 2 !important;
   align-items: center !important;
   justify-content: center !important;
 }

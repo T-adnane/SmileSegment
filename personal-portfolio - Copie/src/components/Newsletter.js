@@ -51,10 +51,6 @@ export const Newsletter = () => {
     }
   };
 
-  const handleShowVis = () => {
-    setShowVis(true); // Mettre à jour l'état pour afficher <Vis>
-  };
-
 
   return (
     <>
@@ -94,19 +90,17 @@ export const Newsletter = () => {
         {predictionCompleted && predictionSuccess && predictionFileURL ? (
           <div>
             <button onClick={handleDownload}>Télécharger le fichier VTP</button>
-            <button onClick={handleShowVis}>Afficher l'objet VTP prédit</button>
+            <button onClick={() => setShowVis(!showVis)}>Afficher l'objet VTP prédit</button>
           </div>
         ) : null}
-        {showVis && <Vis predictionFileURL={predictionFileURL} />}
+        {showVis ?(
+        <div className="visContainer">
+          <Vis predictionFileURL={predictionFileURL} />
+        </div>  
+        ): console.log("some thing was wrong")}
       </div>
     </Col>
     
     </>
   );
 }
-
-
-
-
-
-

@@ -245,7 +245,6 @@ function Vis({ predictionFileURL }) {
 
       const lookupTable = vtkColorTransferFunction.newInstance();
       const source = vtpReader.getOutputData(0);
-      console.log("Source:", source); // Check if 'source' is defined
       const mapper = vtkMapper.newInstance({
         interpolateScalarsBeforeMapping: false,
         useLookupTableScalarRange: true,
@@ -302,7 +301,13 @@ function Vis({ predictionFileURL }) {
       // --------------------------------------------------------------------
 
       const colorByOptions = [{ value: ':', label: '(c) Label' }].concat(
-        
+        source
+          .getPointData()
+          .getArrays()
+          .map((a) => ({
+            label: `(p) ${a.getName()}`,
+            value: `PointData:${a.getName()}`,
+          })),
         source
           .getCellData()
           .getArrays()
@@ -452,7 +457,6 @@ function Vis({ predictionFileURL }) {
     // ----------------------------------------------------------------------------
 
     function loadFile(file) {
-      console.log(file);
       const reader = new FileReader();
       reader.onload = function onLoad(e) {
         createPipeline(file.name, reader.result);
