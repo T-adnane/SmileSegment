@@ -4,6 +4,8 @@ import headerImg from "../assets/img/headerimg.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { HashLink } from "react-router-hash-link";
+import { ColorMode } from "@kitware/vtk.js/Rendering/Core/Mapper2D";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -11,7 +13,8 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Votre Solution de Segmentation Dentaire." ];
+  const [activeLink, setActiveLink] = useState('home');
+  const toRotate = [ "Your Dental Segmentation Solution." ];
   const period = 2000;
 
   useEffect(() => {
@@ -47,6 +50,11 @@ export const Banner = () => {
     }
   }
 
+  const onUpdateActiveLink = (value) => {
+    setActiveLink(value);
+  }
+
+
   return (
     <section className="banner" id="home">
       <Container>
@@ -55,10 +63,10 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Bienvenue dans SmileSegment</span>
-                <h1><span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Votre Solution", "de Segmentation", "Dentaire"]'><span className="wrap">{text}</span></span></h1>
-                  <p>Nous sommes ravis de vous accueillir dans l'univers de SmileSegment, où la technologie rencontre le sourire.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Start <ArrowRightCircle size={25} /></button>
+                <span className="tagline">Welcome to SmileSegment</span>
+                
+                <h1><span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Your Dental", "Segmentation", "Solution."]'><span className="wrap">{text}</span></span></h1>
+                  <p><br></br>We are delighted to welcome you to the world of <b>SmileSegment</b>, <br></br> where technology meets smiles.</p>  
               </div>}
             </TrackVisibility>
           </Col>

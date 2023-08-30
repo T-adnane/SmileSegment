@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import '@kitware/vtk.js/favicon';
 import '@kitware/vtk.js/Rendering/Profiles/Geometry';
 import { formatBytesToProperUnit, debounce } from '@kitware/vtk.js/macros';
@@ -20,7 +20,7 @@ import {
   ColorMode,
   ScalarMode,
 } from '@kitware/vtk.js/Rendering/Core/Mapper/Constants';
-import style from './GeometryViewer.module.css';
+import style from '../css/GeometryViewer.module.css';
 
 
 
