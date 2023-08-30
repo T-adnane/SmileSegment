@@ -3,42 +3,93 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img10.png";
+import projImg6 from "../assets/img/project-img6.png";
+import projImg7 from "../assets/img/project-img7.png";
+import projImg8 from "../assets/img/project-img8.png";
+import projImg9 from "../assets/img/project-img9.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
-  const projects = [
+  const team = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      nom: "Agdad Mariam",
+      domaine: "Génie Informatique",
       imgUrl: projImg1,
+      linkedin :'https://www.linkedin.com/in/mariam-agdad-44664b269/',
+      github :'https://github.com/mariam-agdad',
+      email : 'mariam.agdad08@gmail.com',
+
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      nom: "Elhassnaoui Mohamed",
+      domaine: "Science des données",
       imgUrl: projImg2,
+      linkedin :'https://www.linkedin.com/in/mohamed-elhassnaoui-7a2162211/',
+      github :'https://github.com/Elhassnaoui2001',
+      email : 'mohamed2001elhassnaoui@gmail.com',
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      nom: "Elmouwahid Ayoub",
+      domaine: "Ingénierie des Systèmes d'Information et de Communication",
       imgUrl: projImg3,
+      linkedin :'https://www.linkedin.com/in/ayoub-el-mouwahid-7a0424218/',
+      github :'https://github.com/ELMOUWAHID-AYOUB',
+      email : 'elmouwahid2001@gmail.com',
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      nom: "Labrouki Yousra",
+      domaine: "Génie Logiciel",
+      imgUrl: projImg4,
+      linkedin :'https://www.linkedin.com/in/ussra/',
+      github :'https://github.com/Usra-Lab',
+      email : 'yousralabrouki@gmail.com',
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      nom: "Noutfi Fatima",
+      domaine: "Intelligence Artificielle",
+      imgUrl: projImg5,
+      linkedin :'https://www.linkedin.com/in/fatima-noutfi-685a25254/?originalSubdomain=ma',
+      github :'https://github.com/IA6DAM',
+      email : 'fatima_noutfi@um5.ac.ma',
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      nom: "Touzouz Adnane",
+      domaine: "Intelligence Artificielle",
+      imgUrl: projImg6,
+      linkedin :'https://www.linkedin.com/in/adnane-touzouz/',
+      github :'https://github.com/T-adnane',
+      email : 'touzouzadnane0@gmail.com',
+    },
+  ];
+  const supervisors = [
+    {
+      nom: "Mr Thierry Bertin",
+      domaine: "Ingénieur et dentiste",
+      imgUrl: projImg7,
+      linkedin :'https://www.linkedin.com/company/3dsmartfactory/',
+      github :'https://github.com/404',
+      email : '3dsmartfactory@gmail.com',
+    },
+    {
+      nom: "Mr Hamza Mouncif",
+      domaine: "PhD researcher & Data scientist at 3D Smart Factory",
+      imgUrl: projImg8,
+      linkedin :'https://www.linkedin.com/in/hamzam0n/',
+      github :'https://github.com/hamzam0n',
+      email : 'monhamza1@gmail.com',
+    },
+    {
+      nom: "Mr Amine Kassimi",
+      domaine: "Data Science | Maching Learning | 3D Computer Vision",
+      imgUrl: projImg9,
+      linkedin :'https://www.linkedin.com/in/amine-kassimi/',
+      github :'https://github.com/404',
+      email : 'mrkassimi.amine@gmail.com',
     },
   ];
 
@@ -50,25 +101,21 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h2>ABOUT US</h2>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                      <Nav.Link eventKey="first">Team</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                      <Nav.Link eventKey="second">Supervisors</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
-                          projects.map((project, index) => {
+                          team.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
@@ -79,11 +126,19 @@ export const Projects = () => {
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Tab.Pane eventKey="second">
+                    <Row>
+                        {
+                          supervisors.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
