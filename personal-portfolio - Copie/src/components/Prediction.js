@@ -80,11 +80,14 @@ export const Prediction = () => {
             <p className="selected-file" style={{ color: "black", marginRight: "10px" }}>
               Selected File : {selectedFileName}
             </p>
-          ) : (
+          ) : null}
+
+          {!selectedFileName && !predictionSuccess ? (
             <label htmlFor="uploadInput" style={{ textDecoration: "underline", cursor: "pointer", marginRight: "10px" }}>
               <h3>+ Upload Object</h3>
-            </label>
-          )}
+          </label>
+          ) : null}
+
           {!predictionSuccess ? (
             <button type="submit" onClick={handleUpload}>
               {predicting ? "Predicting..." : "Predict"}
