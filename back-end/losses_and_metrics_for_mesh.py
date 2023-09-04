@@ -1,6 +1,7 @@
 import torch
 import numpy as np
 
+# Fonction pour calculer le Dice Score pondéré
 def weighting_DSC(y_pred, y_true, class_weights, smooth = 1.0):
     '''
     inputs:
@@ -9,9 +10,9 @@ def weighting_DSC(y_pred, y_true, class_weights, smooth = 1.0):
         class_weights
         smooth = 1.0
     '''
-    smooth = 1.
-    mdsc = 0.0
-    n_classes = y_pred.shape[-1] 
+    smooth = 1.  # Paramètre de lissage
+    mdsc = 0.0  # Initialisation du Dice Score pondéré moyen
+    n_classes = y_pred.shape[-1]  # Nombre de classes
 
     # convert probability to one-hot code    
     max_idx = torch.argmax(y_pred, dim=-1, keepdim=True)
@@ -27,7 +28,7 @@ def weighting_DSC(y_pred, y_true, class_weights, smooth = 1.0):
         
     return mdsc
 
-
+# Fonction pour calculer la Sensibilité pondérée
 def weighting_SEN(y_pred, y_true, class_weights, smooth = 1.0):
     '''
     inputs:
@@ -54,7 +55,7 @@ def weighting_SEN(y_pred, y_true, class_weights, smooth = 1.0):
         
     return msen
 
-
+# Fonction pour calculer la Valeur Prédictive Positive pondérée
 def weighting_PPV(y_pred, y_true, class_weights, smooth = 1.0):
     '''
     inputs:
@@ -81,7 +82,7 @@ def weighting_PPV(y_pred, y_true, class_weights, smooth = 1.0):
         
     return mppv
 
-   
+# Fonction pour calculer la Perte Dice généralisée
 def Generalized_Dice_Loss(y_pred, y_true, class_weights, smooth = 1.0):
     '''
     inputs:
@@ -106,14 +107,14 @@ def Generalized_Dice_Loss(y_pred, y_true, class_weights, smooth = 1.0):
        
     return loss
 
-
+# Fonction pour calculer le Dice Score
 def DSC(y_pred, y_true, ignore_background=True, smooth = 1.0):
     '''
     inputs:
         y_pred [npts, n_classes] one-hot code
         y_true [npts, n_classes] one-hot code
     '''
-    smooth = 1.
+    smooth = 1.  # Paramètre de lissage
     n_classes = y_pred.shape[-1]
     dsc = []
     if ignore_background:
@@ -135,7 +136,7 @@ def DSC(y_pred, y_true, ignore_background=True, smooth = 1.0):
         
     return dsc
 
-
+# Fonction pour calculer la Sensibilité
 def SEN(y_pred, y_true, ignore_background=True, smooth = 1.0):
     '''
     inputs:
@@ -164,7 +165,7 @@ def SEN(y_pred, y_true, ignore_background=True, smooth = 1.0):
         
     return sen
 
-
+# Fonction pour calculer la Valeur Prédictive Positive
 def PPV(y_pred, y_true, ignore_background=True, smooth = 1.0):
     '''
     inputs:

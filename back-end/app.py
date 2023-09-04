@@ -1,3 +1,4 @@
+# Importations
 import os
 from meshsegnet import *
 import vedo
@@ -6,9 +7,11 @@ from scipy.spatial import distance_matrix
 from flask import Flask, request, send_from_directory, send_file
 from flask_cors import CORS
 
+# Configuration de l'application Flask
 app = Flask(__name__, static_folder='C:/Users/adnane/Desktop/Stage3D/frontend/build', static_url_path='/')
 CORS(app)
 
+# Variables globales
 upsampling_method = 'KNN'
 model_path = './models'
 model_name = 'MeshSegNet_Max_15_classes_72samples_lr1e-2_best.zip'
@@ -20,10 +23,12 @@ output_path = './outputs'
 if not os.path.exists(output_path):
     os.mkdir(output_path)
 
+# Autres paramètres du modèle
 num_classes = 15
 num_channels = 15
-
 device = torch.device('cpu')
+
+# Chargement du modèle pré-entraîné
 model = MeshSegNet(num_classes=num_classes, num_channels=num_channels).to(device, dtype=torch.float)
 
 checkpoint = torch.load(os.path.join(model_path, model_name), map_location='cpu')
@@ -31,15 +36,17 @@ model.load_state_dict(checkpoint['model_state_dict'])
 del checkpoint
 model = model.to(device, dtype=torch.float)
 
+# Activation de l'optimisation GPU si disponible
 torch.backends.cudnn.benchmark = True
 torch.backends.cudnn.enabled = True
 
+# Route principale de l'application
 @app.route('/')
 def home():
     return app.send_static_file('index.html')
 
 
-
+# Route pour la prédiction
 @app.route('/predict', methods=['POST'])
 def predict():
     global sample_filename
@@ -51,6 +58,7 @@ def predict():
             output_file_path = process_prediction(uploaded_file)  # Obtenir le chemin du fichier VTP généré
             return send_file(output_file_path, as_attachment=True)
 
+# Fonction de traitement de la prédiction
 @app.route('/process_prediction')
 def process_prediction(uploaded_file):
     model.eval()
@@ -148,7 +156,7 @@ def process_prediction(uploaded_file):
 
         return output_file_path
 
-
+# Route de téléchargement de fichiers
 @app.route('/download', methods=['POST'])
 def download(uploaded_file):
     if uploaded_file.filename != '':
@@ -163,7 +171,7 @@ def download(uploaded_file):
 
 
 
-
+# Route pour servir des fichiers statiques
 @app.route('/static/<path:path>')
 def serve_static(path):
     return send_from_directory('frontend/build/static', path)
