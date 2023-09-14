@@ -28,8 +28,7 @@ Après l'exécution du code, l'application se lance automatiquement, et vous ser
 
 # Page d’informations
 Cette page est le point central de notre application, conçue pour vous fournir une vue complète de notre équipe et de nos dirigeants. Il est divisé en deux parties distinctes et complémentaires. La première partie de cette section met en lumière notre équipe étudiante collaborative, qui a travaillé ensemble pour réaliser ce projet
-
-![Capture](https://github.com/T-adnane/SmileSegment/assets/115072337/3a8b65d8-d7d6-4bdf-9954-220ead34e97d)
+![Capture](https://github.com/T-adnane/SmileSegment/assets/115072337/0c206c46-f84a-4a64-9b85-ef687083ebda)
 
 la deuxième  partie est consacrée à nos cadres dirigeants, ceux qui dirigent l'entreprise
 ![Capture](https://github.com/T-adnane/SmileSegment/assets/115072337/f421c98f-c5aa-4d70-9a62-ce4af4dbe211)
