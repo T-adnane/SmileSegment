@@ -23,8 +23,8 @@ Ce modèle permet une segmentation détaillée et précise des structures dentai
 
 # Page d’Accueil
 Après l'exécution du code, l'application se lance automatiquement, et vous serez accueilli par cette interface dès son démarrage. Cette page d'accueil est votre point de départ pour explorer les fonctionnalités et les résultats que nous allons examiner en détail.
+![Capture](https://github.com/T-adnane/SmileSegment/assets/115072337/c51d069a-6b14-4151-a71a-62fa8419288b)
 
-![Capture](https://github.com/T-adnane/SmileSegment/assets/115072337/749dbdb3-769a-41c6-97f7-c2243438e298)
 
 # Page d’informations
 Cette page est le point central de notre application, conçue pour vous fournir une vue complète de notre équipe et de nos dirigeants. Il est divisé en deux parties distinctes et complémentaires. La première partie de cette section met en lumière notre équipe étudiante collaborative, qui a travaillé ensemble pour réaliser ce projet
