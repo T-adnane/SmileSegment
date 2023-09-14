@@ -1,3 +1,26 @@
+# Description
+Cette répository est le résultat de deux mois de travail acharné pendant mon stage au sein de l'entreprise **3D Smart Factory**, où j'ai eu l'opportunité de collaborer avec des collègues talentueux : 
+
+- ***Mlle. Agdad Mariam***
+- ***Mr. Elhassnaoui Mohamed***
+- ***Mr. Elmouwahid Ayoub***
+- ***Mlle. Labrouki Yousra***
+- ***Mlle. Noutfi Fatima***
+
+Sous la supervision attentive de 
+
+- ***Mr. Thierry Bertin Gardelle***
+- ***Mr. Kassimi Amine***
+- ***Mr. Mouncif Hamza***
+
+nous avons travaillé ensemble pour développer un déploiement efficace du modèle **MeshSegNet**, un réseau de segmentation sémantique 3D de pointe, spécifiquement conçu pour la segmentation précise des arcades dentaires.
+
+Ce modèle permet une segmentation détaillée et précise des structures dentaires en utilisant des données en 3D, ce qui en fait un outil essentiel pour les applications médicales et dentaires. Cette répository contient l'ensemble des ressources nécessaires pour déployer MeshSegNet avec succès dans le contexte de la segmentation des arcades dentaires.
+
+
+
+
+
 # Page d’Accueil
 Après l'exécution du code, l'application se lance automatiquement, et vous serez accueilli par cette interface dès son démarrage. Cette page d'accueil est votre point de départ pour explorer les fonctionnalités et les résultats que nous allons examiner en détail.
 
